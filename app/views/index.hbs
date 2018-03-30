@@ -7,15 +7,24 @@
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script>
     $(function () {
+      var time;
       var socket = io();
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
+      var i=0
+      {{!-- setInterval(function(){
+        time = Date.now();
+        socket.emit('chat message', {
+          msg: `发送信息的内容 ${i}`,
+          time: time
+        });
+        i++
+      }, 100) --}}
       socket.on('chat message', function (msg) {
+        let sTime = Date.now() - msg.time
 
-        $('#messages').append($('<li>').text(msg));
+        if ($('#messages li').length>20) {
+          $('#messages li').first().remove()
+        }
+        $('#messages').append($('<li>').text(`${msg.msg} ${sTime} ms`));
       });
     });
   </script>

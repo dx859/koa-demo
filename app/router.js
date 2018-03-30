@@ -1,11 +1,19 @@
 const router = require('koa-router')();
 const postController = require('./controllers/postController');
+const send = require('koa-send');
+const config = require('./config');
 
+router.get('/:tenant?*', async (ctx, next) => {
+  // ctx.body = 'heloo';
 
-router.get('/', postController.list)
-  .get('/post/new', postController.add)
-  .get('/post/:id', postController.show)
-  .post('/post', postController.create);
+  await send(ctx, 'index.html', {root: config.publicDir})
+})
+
+router.get('*', async (ctx, next) => {
+
+  ctx.body = 'hello'
+})
+
 
 
 module.exports = router;
