@@ -15,11 +15,11 @@ const config = {
     rolling: false,
   },
   db: {
-    host: 'mysql-test.myfuwu.com.cn',
-    port: 63316,
-    user: 'mysscm',
-    password: 'rqaN2xu&jpolChw2',
-    database: 'cz_config'
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: 'root',
+    database: 'immooc'
   },
 }
 

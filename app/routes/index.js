@@ -1,8 +1,9 @@
-const postController = require('../controllers/postController');
+
 const Router = require('koa-router');
+const apiRouter = require('./api');
 
 const router = new Router();
 
-router.get('/', postController.list)
+router.use('/api', apiRouter.routes())
 
 module.exports = router;
