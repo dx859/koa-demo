@@ -1,0 +1,1 @@
+{"ids":["cap"],"data":{"cap":{"name":"瓶盖","desc":"废土上的通用货币。","price":10,"type":"cap"}},"fields":{"name":{"dataType":"string"},"desc":{"dataType":"string"},"price":{"dataType":"number"},"type":{"dataType":"string"}},"fieldIds":["name","desc","price","type"]}
