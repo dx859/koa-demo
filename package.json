@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "ejs": "^2.5.9",
+    "fs.promised": "^3.0.0",
     "handlebars": "^4.0.11",
     "koa": "^2.5.0",
     "koa-body": "^2.5.0",

@@ -1,9 +1,9 @@
 const Router = require('koa-router');
-const todoController = require('../controllers/todoController');
+const loselandAction = require('../controllers/loselandAction');
 
 const apiRouter = new Router();
 
-apiRouter.get('/todos', todoController.list)
-apiRouter.post('/todo', todoController.list)
+apiRouter.all('/loseland/save', loselandAction.saveItem);
+apiRouter.get('/loseland/food', loselandAction.selectItem);
 
 module.exports = apiRouter;
