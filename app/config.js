@@ -1,5 +1,6 @@
-const path = require('path');
+const path = require('path')
 const rootPath = path.join(__dirname, '..')
+const envConfig = require('dotenv').config().parsed
 
 const config = {
   publicDir: path.join(rootPath, 'public'),
@@ -9,18 +10,12 @@ const config = {
   sessionConfig: {
     key: 'koa:sess',
     maxAge: 86400000,
-    overwrite: true, /** (boolean) can overwrite or not (default true) */
-    httpOnly: true, /** (boolean) httpOnly or not (default true) */
-    signed: true, /** (boolean) signed or not (default true) */
-    rolling: false,
+    overwrite: true /** (boolean) can overwrite or not (default true) */,
+    httpOnly: true /** (boolean) httpOnly or not (default true) */,
+    signed: true /** (boolean) signed or not (default true) */,
+    rolling: false
   },
-  db: {
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    password: 'root',
-    database: 'immooc'
-  },
+  dbUrl: ''
 }
 
-module.exports = config;
+module.exports = { ...config, ...envConfig }
