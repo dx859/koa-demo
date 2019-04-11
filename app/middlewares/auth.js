@@ -3,5 +3,6 @@ exports.loginRequired = async (ctx, next) => {
   if (ctx.session.user) {
     await next()
   } else {
+    await next()
   }
 }

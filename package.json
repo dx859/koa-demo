@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon ./app/index.js"
+    "start": "nodemon ./app/index.js",
+    "debug": "node %NODE_DEBUG_OPTION% ./app/index.js"
   },
   "dependencies": {
     "dotenv": "^7.0.0",
